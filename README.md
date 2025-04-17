@@ -1,8 +1,6 @@
 # Sistema de Etiquetas para Transferência de CDs
 
-Um sistema simples e eficiente para gerar etiquetas para transferência entre CDs da Brisanet, desenvolvido por Wanderson Davyd.
-
-![Logo Brisanet](https://upload.wikimedia.org/wikipedia/commons/1/16/Brisanet_logo.svg)
+Um sistema simples e eficiente para gerar etiquetas de transferência, desenvolvido por Wanderson Davyd.
 
 ## Funcionalidades
 
@@ -23,7 +21,7 @@ Um sistema simples e eficiente para gerar etiquetas para transferência entre CD
    - Adicione o pedido SAP (opcional)
    - Insira o link da transação (será usado para gerar o código de barras)
 
-2. **Gere a etiqueta**: 
+2. **Gere a etiqueta**:
    - Clique no botão "Gerar Etiqueta"
    - Visualize a etiqueta na tela de prévia
 
@@ -49,10 +47,3 @@ npm install
 
 # Inicie o servidor de desenvolvimento
 npm run dev
-```
-
-## Contato
-
-Para dúvidas, sugestões ou melhorias, entre em contato com o desenvolvedor:
-
-**Desenvolvido por Wanderson Davyd**
