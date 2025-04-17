@@ -28,7 +28,9 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build
-        run: npm run build
+        run: npm run build -- --base=/geradordeetiquetas/
+        env:
+          NODE_ENV: production
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
