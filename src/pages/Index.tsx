@@ -78,7 +78,7 @@ const Index = () => {
       </main>
 
       <footer className="w-full max-w-lg mt-4 text-center text-gray-500 text-xs">
-        © {new Date().getFullYear()} Sistema de Etiquetas - Desenvolvido por Wanderson Davyd
+        Idealizado Pela Logística Regional 02 - Desenvolvido por Wanderson Davyd
       </footer>
     </div>
   );
