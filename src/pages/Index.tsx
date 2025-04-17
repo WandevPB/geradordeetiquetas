@@ -12,6 +12,8 @@ interface FormData {
   destinationCD: string;
   sapTransferOrder: string;
   transactionLink: string;
+  quantityPieces: string;
+  invoiceNumber: string;
 }
 
 const Index = () => {

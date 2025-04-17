@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,6 +13,8 @@ interface FormData {
   destinationCD: string;
   sapTransferOrder: string;
   transactionLink: string;
+  quantityPieces: string;
+  invoiceNumber: string;
 }
 
 interface TransferFormProps {
@@ -30,6 +31,8 @@ const TransferForm = ({ onFormSubmit }: TransferFormProps) => {
     destinationCD: "",
     sapTransferOrder: "",
     transactionLink: "",
+    quantityPieces: "",
+    invoiceNumber: ""
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,7 +49,9 @@ const TransferForm = ({ onFormSubmit }: TransferFormProps) => {
       "volume", 
       "sourceCD", 
       "destinationCD", 
-      "transactionLink"
+      "transactionLink",
+      "quantityPieces",
+      "invoiceNumber"
     ];
     
     const missingFields = requiredFields.filter(field => !formData[field as keyof FormData]);
@@ -104,6 +109,31 @@ const TransferForm = ({ onFormSubmit }: TransferFormProps) => {
                 value={formData.volume}
                 onChange={handleChange}
                 placeholder="Quantia ou volume"
+                className="text-sm h-9"
+              />
+            </div>
+            
+            <div className="space-y-1">
+              <Label htmlFor="quantityPieces" className="text-sm">QTD DE PEÇAS *</Label>
+              <Input
+                id="quantityPieces"
+                name="quantityPieces"
+                type="number"
+                value={formData.quantityPieces}
+                onChange={handleChange}
+                placeholder="Quantidade de peças"
+                className="text-sm h-9"
+              />
+            </div>
+            
+            <div className="space-y-1">
+              <Label htmlFor="invoiceNumber" className="text-sm">NÚMERO DE NF *</Label>
+              <Input
+                id="invoiceNumber"
+                name="invoiceNumber"
+                value={formData.invoiceNumber}
+                onChange={handleChange}
+                placeholder="Número da nota fiscal"
                 className="text-sm h-9"
               />
             </div>

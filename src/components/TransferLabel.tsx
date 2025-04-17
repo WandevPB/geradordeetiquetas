@@ -14,6 +14,8 @@ interface LabelData {
   destinationCD: string;
   sapTransferOrder: string;
   transactionLink: string;
+  quantityPieces: string;
+  invoiceNumber: string;
 }
 
 interface TransferLabelProps {
@@ -121,6 +123,8 @@ const TransferLabel = ({ data, onBack }: TransferLabelProps) => {
         printWindow.document.write(`<tr><th>TRANSAÇÃO:</th><td>${data.transactionNumber}</td></tr>`);
         printWindow.document.write(`<tr><th>TICKET:</th><td>${data.ticketNumber}</td></tr>`);
         printWindow.document.write(`<tr><th>VOLUME:</th><td>${data.volume}</td></tr>`);
+        printWindow.document.write(`<tr><th>QTD DE PEÇAS:</th><td>${data.quantityPieces}</td></tr>`);
+        printWindow.document.write(`<tr><th>NÚMERO DE NF:</th><td>${data.invoiceNumber}</td></tr>`);
         
         if (data.sapTransferOrder) {
           printWindow.document.write(`<tr><th>PEDIDO SAP:</th><td>${data.sapTransferOrder}</td></tr>`);
@@ -224,6 +228,14 @@ const TransferLabel = ({ data, onBack }: TransferLabelProps) => {
                 <tr>
                   <th className="border border-black p-2 bg-gray-100 text-left">VOLUME:</th>
                   <td className="border border-black p-2">{data.volume}</td>
+                </tr>
+                <tr>
+                  <th className="border border-black p-2 bg-gray-100 text-left">QTD DE PEÇAS:</th>
+                  <td className="border border-black p-2">{data.quantityPieces}</td>
+                </tr>
+                <tr>
+                  <th className="border border-black p-2 bg-gray-100 text-left">NÚMERO DE NF:</th>
+                  <td className="border border-black p-2">{data.invoiceNumber}</td>
                 </tr>
                 {data.sapTransferOrder && (
                   <tr>
